@@ -5,7 +5,7 @@ WIDTH, HEIGHT = 1200, 600
 TILE_SIZE = 15
 
 COLOUR_BG = (10, 10, 10)
-Colour_GRID = (20, 20, 20)
+COLOUR_GRID = (20, 20, 20)
 COLOUR_ALIVE = (57, 255, 20)
 
 #colours 
