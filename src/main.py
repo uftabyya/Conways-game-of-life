@@ -15,9 +15,9 @@ COLOUR_ALIVE = (57, 255, 20)
 
 def draw_grid(screen):
     for y in range(0, HEIGHT, TILE_SIZE):
-        pygame.draw.line(screen, Colour_GRID, (0, y), (WIDTH, y), 1)
+        pygame.draw.line(screen, COLOUR_GRID, (0, y), (WIDTH, y), 1)
     for x in range(0, WIDTH, TILE_SIZE):
-        pygame.draw.line(screen, Colour_GRID, (x, 0), (x, HEIGHT), 1)
+        pygame.draw.line(screen, COLOUR_GRID, (x, 0), (x, HEIGHT), 1)
 
 def cell_display(screen, board: Board):
     for row in range(board.get_row()):
