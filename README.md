@@ -17,7 +17,7 @@ Python 3.10 or higher
 
 ## Instructions
 - `Space` / `K` - Pause/Unpause the simulation
-- `T` - Clear all cells
+- `R` - Clear all cells
 - `ESC` - Quit the simulation
 - **Left mouse click** - Add new live cells
 
