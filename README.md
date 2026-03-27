@@ -1,6 +1,6 @@
 # Conway's Game of Life
 A Python implementation of Conway's game of life using Pygame.
-Interact with the simulation using mouse and keyboard
+Interact with the simulation using mouse and keyboard.
 
 ## How to Install:
 1. Clone the repository
