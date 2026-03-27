@@ -8,6 +8,11 @@ COLOUR_BG = (10, 10, 10)
 Colour_GRID = (20, 20, 20)
 COLOUR_ALIVE = (57, 255, 20)
 
+#colours 
+# Neon Green (57, 255, 20)
+# Neon Blue (5, 217, 255)
+# Neon Red (255, 0, 0)
+
 def draw_grid(screen):
     for y in range(0, HEIGHT, TILE_SIZE):
         pygame.draw.line(screen, Colour_GRID, (0, y), (WIDTH, y), 1)
