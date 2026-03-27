@@ -1,2 +1,2 @@
-# Conways-game-of-life
-Conway's game of life created using Python
+# Conway's Game of Life
+Conway's game of life written in Python
