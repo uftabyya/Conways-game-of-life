@@ -20,6 +20,7 @@ Python 3.10 or higher
 - `R` - Clear all cells
 - `ESC` - Quit the simulation
 - **Left mouse click** - Add new live cells
+- **Right mouse click** - Remove live cells
 
 You may change colour of the live cells by editing the RGB value of the `COLOUR_ALIVE` constant in `main.py`.
 
