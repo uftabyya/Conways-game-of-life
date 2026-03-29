@@ -58,6 +58,10 @@ def main():
             row, col = position[0]//TILE_SIZE, position[1]//TILE_SIZE
             board.get_cell(row, col).set_alive()
 
+        if pygame.mouse.get_pressed()[2]:
+            position = pygame.mouse.get_pos()
+            row, col = position[0]//TILE_SIZE, position[1]//TILE_SIZE
+            board.get_cell(row, col).set_dead()
 
         screen.fill(COLOUR_BG)
         cell_display(screen, board)
