@@ -36,44 +36,39 @@ def main():
     pygame.display.set_caption("Conway's Game of Life")
     board = Board(WIDTH//TILE_SIZE, HEIGHT//TILE_SIZE)
 
-    running = False
+    paused = True 
 
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 return
-            elif event.type == pygame.KEYDOWN:
+            if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE or event.key == pygame.K_k:
-                    running = not running
+                    paused = not paused
                 elif event.key == pygame.K_r:
                     board = Board(WIDTH//TILE_SIZE, HEIGHT//TILE_SIZE)
                 elif event.key == pygame.K_ESCAPE:
                     pygame.quit()
                     return
-                    
-
-        if pygame.mouse.get_pressed()[0]:
+         
+        mouse_button_pressed = pygame.mouse.get_pressed()
+        if mouse_button_pressed[0] or mouse_button_pressed[2]:
             position = pygame.mouse.get_pos()
             row, col = position[0]//TILE_SIZE, position[1]//TILE_SIZE
-            board.get_cell(row, col).set_alive()
+            if mouse_button_pressed[0]:
+                board.get_cell(row, col).set_alive()
+            if mouse_button_pressed[2]:
+                board.get_cell(row, col).set_dead()
 
-        if pygame.mouse.get_pressed()[2]:
-            position = pygame.mouse.get_pos()
-            row, col = position[0]//TILE_SIZE, position[1]//TILE_SIZE
-            board.get_cell(row, col).set_dead()
+        if not paused:
+            board.update_neighbours()
+            board.update_status()
 
         screen.fill(COLOUR_BG)
         cell_display(screen, board)
         draw_grid(screen)
         pygame.display.flip()
-
-        if running:
-            board.update_neighbours()
-            board.update_status()
-            cell_display(screen, board)
-            draw_grid(screen)
-            pygame.display.flip()
 
         clock.tick(10)
 
