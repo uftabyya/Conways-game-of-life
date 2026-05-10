@@ -56,10 +56,11 @@ def main():
         if mouse_button_pressed[0] or mouse_button_pressed[2]:
             position = pygame.mouse.get_pos()
             row, col = position[0]//TILE_SIZE, position[1]//TILE_SIZE
-            if mouse_button_pressed[0]:
-                board.get_cell(row, col).set_alive()
-            if mouse_button_pressed[2]:
-                board.get_cell(row, col).set_dead()
+            if 0 <= row < board.get_row() and 0 <= col < board.get_col():
+                if mouse_button_pressed[0]:
+                    board.get_cell(row, col).set_alive()
+                if mouse_button_pressed[2]:
+                    board.get_cell(row, col).set_dead()
 
         if not paused:
             board.update_neighbours()
