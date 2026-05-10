@@ -26,4 +26,3 @@ You may change colour of the live cells by editing the RGB value of the `COLOUR_
 
 ## Known Limitations
 - The simulation currently stops at the borders.
-- The program may crash if the cursor crosses the border while placing live tiles with the mouse.
